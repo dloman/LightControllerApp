@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#222"
+    android:orientation="vertical" >
+
+      <Switch
+          android:id="@+id/switch1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_alignRight="@+id/switch2"
+          android:layout_marginTop="102dp"
+          android:textColor="#00F000" 
+          android:text="Slosh Vertical" />
+
+      <Switch
+          android:id="@+id/switch2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/switch1"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="66dp"
+          android:textColor="#00F000" 
+          android:text="Slosh Horizontal" />
+
+      <CheckedTextView
+          android:id="@+id/checkedTextView1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/switch2"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="46dp"
+          android:textColor="#00F000" 
+          android:text="Slosh Frequency" />
+
+      <SeekBar
+          android:id="@+id/seekBar1"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_alignParentLeft="true"
+          android:layout_below="@+id/checkedTextView1"
+          android:progress="50" 
+          android:layout_marginTop="16dp" />
+
+</RelativeLayout>

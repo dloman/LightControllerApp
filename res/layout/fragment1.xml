@@ -29,7 +29,7 @@
         android:layout_marginTop="18dp" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/SendColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/valuebar"
@@ -42,10 +42,9 @@
         android:id="@+id/toggleButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button1"
-        android:layout_alignBottom="@+id/button1"
         android:layout_alignLeft="@+id/valuebar"
-        android:layout_marginLeft="34dp"
+        android:layout_alignTop="@+id/SendColor"
+        android:layout_marginLeft="27dp"
         android:hint="Auto Send"
         android:text="Auto Send"
         android:textOff="Auto Send"

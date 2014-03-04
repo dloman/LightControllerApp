@@ -10,7 +10,7 @@
         style="@style/AppTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
+        android:layout_above="@+id/SloshButton"
         android:layout_marginBottom="24dp"
         android:layout_toRightOf="@+id/picker" />
 
@@ -31,7 +31,7 @@
         android:layout_marginBottom="18dp" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/SloshButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -44,9 +44,9 @@
         android:id="@+id/toggleButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button1"
+        android:layout_alignTop="@+id/SloshButton"
         android:layout_marginRight="14dp"
-        android:layout_toLeftOf="@+id/button1"
+        android:layout_toLeftOf="@+id/SloshButton"
         android:hint="Auto Send"
         android:text="Auto Send"
         android:textOff="Auto Send"

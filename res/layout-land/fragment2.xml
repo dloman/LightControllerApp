@@ -48,9 +48,9 @@
           android:id="@+id/SloshButton"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_below="@+id/switch1"
-          android:layout_marginLeft="20dp"
-          android:layout_toRightOf="@+id/switch1"
+          android:layout_alignBottom="@+id/switch2"
+          android:layout_alignParentRight="true"
+          android:layout_marginRight="47dp"
           android:text="Start Slosh" />
 
 </RelativeLayout>

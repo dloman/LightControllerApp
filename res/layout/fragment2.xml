@@ -51,6 +51,6 @@
           android:layout_below="@+id/seekBar1"
           android:layout_centerHorizontal="true"
           android:layout_marginTop="21dp"
-          android:text="StartSlosh" />
+          android:text="Start Slosh" />
 
 </RelativeLayout>

@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -27,9 +28,9 @@ public class Fragment2 extends Fragment {
 		View rootView = inflater.inflate(R.layout.fragment2, container, false);
 		Button StartSloshButton = (Button) rootView.findViewById(R.id.SloshButton);
 	    StartSloshButton.setOnClickListener(StartSlosh);
+	    Button OffButton = (Button) rootView.findViewById(R.id.OffButton);
+	    OffButton.setOnClickListener(LightsOff);
 		mFrequencyBar = (SeekBar) rootView.findViewById(R.id.seekBar1);
-	    mVerticalSwitch = (Switch) rootView.findViewById(R.id.switch1);
-	    mHorizontalSwitch = (Switch) rootView.findViewById(R.id.switch2);
 	    
 	    
 	    return rootView;
@@ -43,14 +44,25 @@ public class Fragment2 extends Fragment {
 			List<NameValuePair> nameValuePair = new ArrayList<NameValuePair>(5);
 	   		nameValuePair.add(new BasicNameValuePair("Type", "Slosh"));
 	   		nameValuePair.add(new BasicNameValuePair(
-	   	       "Horizontal", 
-	   	       Boolean.toString(mHorizontalSwitch.isChecked())));
-	   		nameValuePair.add(new BasicNameValuePair(
-	   		   "Vertical", 
-	   		   Boolean.toString(mVerticalSwitch.isChecked())));
-	   		nameValuePair.add(new BasicNameValuePair(
 	   		   "Frequency", 
 	   		   Integer.toString(mFrequencyBar.getProgress())));
+	   		HttpPostWrapper httpPostWrapper = new HttpPostWrapper(MainActivity.GetUrl(), nameValuePair);
+
+		}
+		
+	};
+	
+	View.OnClickListener LightsOff = new View.OnClickListener(){
+
+		@Override
+		public void onClick(View v) 
+		{
+			List<NameValuePair> nameValuePair = new ArrayList<NameValuePair>(5);
+	   		nameValuePair.add(new BasicNameValuePair("Type", "fColor"));
+	   		nameValuePair.add(new BasicNameValuePair("Alpha", "0"));
+	   		nameValuePair.add(new BasicNameValuePair("Red", "0"));
+	   		nameValuePair.add(new BasicNameValuePair("Green", "0"));
+	   		nameValuePair.add(new BasicNameValuePair("Blue", "0"));
 	   		HttpPostWrapper httpPostWrapper = new HttpPostWrapper(MainActivity.GetUrl(), nameValuePair);
 
 		}

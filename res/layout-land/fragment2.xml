@@ -23,34 +23,21 @@
           android:progress="50" 
           android:layout_marginBottom="58dp" />
 
-      <Switch
-          android:id="@+id/switch1"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentTop="true"
-          android:layout_alignRight="@+id/checkedTextView1"
-          android:layout_marginRight="37dp"
-          android:layout_marginTop="15dp"
-          android:text="Slosh Vertical"
-          android:textColor="#00F000" />
-
-      <Switch
-          android:id="@+id/switch2"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_above="@+id/checkedTextView1"
-          android:layout_alignRight="@+id/switch1"
-          android:layout_marginBottom="36dp"
-          android:text="Slosh Horizontal"
-          android:textColor="#00FF00" />
-
       <Button
           android:id="@+id/SloshButton"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_alignBottom="@+id/switch2"
-          android:layout_alignParentRight="true"
-          android:layout_marginRight="47dp"
+          android:layout_alignParentTop="true"
+          android:layout_marginTop="45dp"
+          android:layout_toRightOf="@+id/checkedTextView1"
           android:text="Start Slosh" />
+
+      <Button
+          android:id="@+id/OffButton"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignBottom="@+id/SloshButton"
+          android:layout_toLeftOf="@+id/checkedTextView1"
+          android:text="Lights Off" />
 
 </RelativeLayout>

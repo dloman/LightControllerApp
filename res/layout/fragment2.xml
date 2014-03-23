@@ -5,35 +5,14 @@
     android:background="#222"
     android:orientation="vertical" >
 
-      <Switch
-          android:id="@+id/switch1"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentTop="true"
-          android:layout_alignRight="@+id/switch2"
-          android:layout_marginTop="102dp"
-          android:textColor="#00F000" 
-          android:text="Slosh Vertical" />
-
-      <Switch
-          android:id="@+id/switch2"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_below="@+id/switch1"
-          android:layout_centerHorizontal="true"
-          android:layout_marginTop="66dp"
-          android:textColor="#00F000" 
-          android:text="Slosh Horizontal" />
-
       <CheckedTextView
           android:id="@+id/checkedTextView1"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_below="@+id/switch2"
           android:layout_centerHorizontal="true"
           android:layout_marginTop="46dp"
-          android:textColor="#00F000" 
-          android:text="Slosh Frequency" />
+          android:text="Slosh Frequency"
+          android:textColor="#00F000" />
 
       <SeekBar
           android:id="@+id/seekBar1"
@@ -48,9 +27,20 @@
           android:id="@+id/SloshButton"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
           android:layout_below="@+id/seekBar1"
-          android:layout_centerHorizontal="true"
-          android:layout_marginTop="21dp"
+          android:layout_marginRight="40dp"
+          android:layout_marginTop="71dp"
           android:text="Start Slosh" />
+
+      <Button
+          android:id="@+id/OffButton"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignBaseline="@+id/SloshButton"
+          android:layout_alignBottom="@+id/SloshButton"
+          android:layout_marginRight="44dp"
+          android:layout_toLeftOf="@+id/SloshButton"
+          android:text="Lights Off" />
 
 </RelativeLayout>

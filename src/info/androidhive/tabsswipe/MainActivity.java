@@ -4,11 +4,14 @@ import info.androidhive.tabsswipe.adapter.TabsPagerAdapter;
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
+import android.app.Activity;
 import android.app.FragmentTransaction;
-import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity implements
 		ActionBar.TabListener {
@@ -19,10 +22,13 @@ public class MainActivity extends FragmentActivity implements
 	// Tab titles
 	private String[] tabs = { "Color Picker", "Sloshing Colors" };
 
+	static Activity mActivity = null;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		mActivity = this; 
 
 		// Initilization
 		viewPager = (ViewPager) findViewById(R.id.pager);
@@ -76,14 +82,23 @@ public class MainActivity extends FragmentActivity implements
 	@Override
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 	}
-
-	public static Context getContext() 
-	{
-		return getContext();
-	}
 	
 	public static String GetUrl()
 	{
 		return "http://dloman.dyndns.org:8080";
 	}
+	
+	 public final static Handler mHandler = new Handler() {
+	        public void handleMessage(Message msg) {
+	              if(msg.arg1 == 1)
+	                    Toast.makeText(mActivity,"Server is Down :(", Toast.LENGTH_SHORT).show();
+	        }
+	    };
+	 public static void showToast()
+	 {
+		 Message msg = mHandler.obtainMessage();
+		 msg.arg1 = 1;
+		 mHandler.sendMessage(msg);
+	 }
+	
 }

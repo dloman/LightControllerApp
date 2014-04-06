@@ -32,7 +32,7 @@ public class HttpPostWrapper {
 	        }
 			catch (Exception e)
 			{
-				Toast.makeText(MainActivity.getContext(), "bummer shit broke", Toast.LENGTH_SHORT).show();
+				MainActivity.showToast();
 			}
 		 }
 	    });

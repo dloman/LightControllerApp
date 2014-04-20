@@ -34,12 +34,10 @@ ToggleButton AutoSendButton;
 
 		mTime = System.currentTimeMillis();
 		ColorPicker picker = (ColorPicker) rootView.findViewById(R.id.picker);
-		ValueBar valueBar = (ValueBar) rootView.findViewById(R.id.valuebar);
 		OpacityBar opacityBar = (OpacityBar) rootView.findViewById(R.id.opacitybar);
 		Button SendButton = (Button) rootView.findViewById(R.id.SendColor);
 		AutoSendButton = (ToggleButton) rootView.findViewById(R.id.toggleButton1);
 		SendButton.setOnClickListener(SendButtonListener);
-		picker.addValueBar(valueBar);
 		picker.addOpacityBar(opacityBar);
 		mColor = picker.getColor();
 		
@@ -97,6 +95,7 @@ ToggleButton AutoSendButton;
    		nameValuePair.add(new BasicNameValuePair("Red", Integer.toString(Color.red(InputColor))));
    		nameValuePair.add(new BasicNameValuePair("Green", Integer.toString(Color.green(InputColor))));
    		nameValuePair.add(new BasicNameValuePair("Blue", Integer.toString(Color.blue(InputColor))));
-   		HttpPostWrapper httpPostWrapper = new HttpPostWrapper(Url, nameValuePair);
+   		@SuppressWarnings("unused")
+		HttpPostWrapper httpPostWrapper = new HttpPostWrapper(Url, nameValuePair);
 	}
 }

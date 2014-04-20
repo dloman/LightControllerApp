@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">LightController</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">LightController </string>
+    <string name="action_settings">Settings </string>
+    <string name="StartMode"> Start Mode    </string>
+    <string name="AutoSend">  Auto Send     </string>
+    <string name="SendColor"> Send Color    </string>
+    <string name="ModeStart"> Start Mode    </string>
+    <string name="LightsOff"> Lights Off    </string>
+    <string name="SloshFreq">  Mode Frequency</string>
+
+    <string-array name="ModeTypes">
+        <item> Rolling Color </item>
+        <item> Larson Scan   </item>
+        <item> All Fade      </item>
+        <item> Color Wheel   </item>
+        <item> Color Ring    </item>
+    </string-array>
 </resources>

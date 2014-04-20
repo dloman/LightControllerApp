@@ -17,37 +17,29 @@
         style="@style/AppTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/valuebar"
-        android:layout_below="@+id/picker" />
-
-    <com.larswerkman.holocolorpicker.ValueBar
-        android:id="@+id/valuebar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/opacitybar"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp" />
-
-    <Button
-        android:id="@+id/SendColor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/valuebar"
-        android:layout_below="@+id/valuebar"
-        android:layout_marginRight="14dp"
-        android:layout_marginTop="27dp"
-        android:text="Send Color" />
+        android:layout_below="@+id/picker"
+        android:layout_centerHorizontal="true" />
 
     <ToggleButton
         android:id="@+id/toggleButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/valuebar"
-        android:layout_alignTop="@+id/SendColor"
-        android:layout_marginLeft="27dp"
-        android:hint="Auto Send"
-        android:text="Auto Send"
+        android:layout_alignBaseline="@+id/SendColor"
+        android:layout_alignBottom="@+id/SendColor"
+        android:layout_alignLeft="@+id/opacitybar"
+        android:hint="@string/AutoSend"
+        android:text="@string/AutoSend"
         android:textOff="Auto Send"
         android:textOn="Auto Send" />
+
+    <Button
+        android:id="@+id/SendColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/opacitybar"
+        android:layout_below="@+id/opacitybar"
+        android:layout_marginRight="22dp"
+        android:layout_marginTop="38dp"
+        android:text="@string/SendColor" />
 
 </RelativeLayout>

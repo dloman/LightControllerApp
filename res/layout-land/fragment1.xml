@@ -13,14 +13,6 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="31dp" />
 
-    <com.larswerkman.holocolorpicker.ValueBar
-        android:id="@+id/valuebar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/opacitybar"
-        android:layout_marginTop="25dp" />
-
     <com.larswerkman.holocolorpicker.OpacityBar
         android:id="@+id/opacitybar"
         style="@style/AppTheme"
@@ -37,19 +29,19 @@
         android:layout_alignBaseline="@+id/SendColor"
         android:layout_alignBottom="@+id/SendColor"
         android:layout_toRightOf="@+id/picker"
-        android:hint="Auto Send"
-        android:text="Auto Send"
-        android:textOff="Auto Send"
-        android:textOn="Auto Send" />
+        android:hint="@string/AutoSend"
+        android:text="@string/AutoSend"
+        android:textOff="@string/AutoSend"
+        android:textOn="@string/AutoSend" />
 
     <Button
         android:id="@+id/SendColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/valuebar"
+        android:layout_below="@+id/opacitybar"
         android:layout_marginRight="22dp"
         android:layout_marginTop="41dp"
-        android:text="Send Color" />
+        android:text="@string/SendColor" />
 
 </RelativeLayout>

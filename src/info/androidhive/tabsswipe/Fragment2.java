@@ -11,14 +11,18 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.SeekBar;
+import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.Toast;
 
 public class Fragment2 extends Fragment {
 
 	SeekBar mFrequencyBar;
 	Switch mVerticalSwitch, mHorizontalSwitch;
+	Spinner mSpinner;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,8 +34,15 @@ public class Fragment2 extends Fragment {
 	    Button OffButton = (Button) rootView.findViewById(R.id.OffButton);
 	    OffButton.setOnClickListener(LightsOff);
 		mFrequencyBar = (SeekBar) rootView.findViewById(R.id.seekBar1);
-	    
-	    
+		
+		mSpinner = (Spinner) rootView.findViewById(R.id.spinner1);
+		ArrayAdapter<CharSequence> Adapter = ArrayAdapter.createFromResource(
+	        getActivity(), 
+			R.array.ModeTypes, 
+			R.layout.spinner_item);
+		Adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
+		mSpinner.setAdapter(Adapter);
+		
 	    return rootView;
 	}
 	
@@ -41,11 +52,16 @@ public class Fragment2 extends Fragment {
 		public void onClick(View v) 
 		{
 			List<NameValuePair> nameValuePair = new ArrayList<NameValuePair>(5);
-	   		nameValuePair.add(new BasicNameValuePair("Type", "Slosh"));
+	   		nameValuePair.add(new BasicNameValuePair("Type", "Mode"));
 	   		nameValuePair.add(new BasicNameValuePair(
 	   		   "Frequency", 
 	   		   Integer.toString(mFrequencyBar.getProgress())));
-	   		HttpPostWrapper httpPostWrapper = new HttpPostWrapper(MainActivity.GetUrl(), nameValuePair);
+	   		nameValuePair.add(new BasicNameValuePair(
+	   			"Mode",
+	   			mSpinner.getSelectedItem().toString()));
+		    Toast.makeText(getActivity(), "Sending Mode Data", Toast.LENGTH_SHORT).show();
+	   		@SuppressWarnings("unused")
+			HttpPostWrapper httpPostWrapper = new HttpPostWrapper(MainActivity.GetUrl(), nameValuePair);
 
 		}
 		
@@ -62,7 +78,8 @@ public class Fragment2 extends Fragment {
 	   		nameValuePair.add(new BasicNameValuePair("Red", "0"));
 	   		nameValuePair.add(new BasicNameValuePair("Green", "0"));
 	   		nameValuePair.add(new BasicNameValuePair("Blue", "0"));
-	   		HttpPostWrapper httpPostWrapper = new HttpPostWrapper(MainActivity.GetUrl(), nameValuePair);
+	   		@SuppressWarnings("unused")
+			HttpPostWrapper httpPostWrapper = new HttpPostWrapper(MainActivity.GetUrl(), nameValuePair);
 
 		}
 		

@@ -28,7 +28,7 @@ public class MainActivity extends FragmentActivity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		mActivity = this; 
+		mActivity = this;
 
 		// Initilization
 		viewPager = (ViewPager) findViewById(R.id.pager);
@@ -37,7 +37,7 @@ public class MainActivity extends FragmentActivity implements
 
 		viewPager.setAdapter(mAdapter);
 		actionBar.setHomeButtonEnabled(false);
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);		
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
 		// Adding Tabs
 		for (String tab_name : tabs) {
@@ -82,12 +82,12 @@ public class MainActivity extends FragmentActivity implements
 	@Override
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 	}
-	
+
 	public static String GetUrl()
 	{
-		return "http://dloman.dyndns.org:8080";
+		return "http://dloman.noip.me:8080";
 	}
-	
+
 	 public final static Handler mHandler = new Handler() {
 	        public void handleMessage(Message msg) {
 	              if(msg.arg1 == 1)
@@ -100,5 +100,5 @@ public class MainActivity extends FragmentActivity implements
 		 msg.arg1 = 1;
 		 mHandler.sendMessage(msg);
 	 }
-	
+
 }

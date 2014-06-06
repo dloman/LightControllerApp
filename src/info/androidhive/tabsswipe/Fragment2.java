@@ -23,7 +23,7 @@ public class Fragment2 extends Fragment {
 	SeekBar mFrequencyBar;
 	Switch mVerticalSwitch, mHorizontalSwitch;
 	Spinner mSpinner;
-	
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -34,27 +34,27 @@ public class Fragment2 extends Fragment {
 	    Button OffButton = (Button) rootView.findViewById(R.id.OffButton);
 	    OffButton.setOnClickListener(LightsOff);
 		mFrequencyBar = (SeekBar) rootView.findViewById(R.id.seekBar1);
-		
+
 		mSpinner = (Spinner) rootView.findViewById(R.id.spinner1);
 		ArrayAdapter<CharSequence> Adapter = ArrayAdapter.createFromResource(
-	        getActivity(), 
-			R.array.ModeTypes, 
+	        getActivity(),
+			R.array.ModeTypes,
 			R.layout.spinner_item);
 		Adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
 		mSpinner.setAdapter(Adapter);
-		
+
 	    return rootView;
 	}
-	
+
 	View.OnClickListener StartSlosh = new View.OnClickListener(){
 
 		@Override
-		public void onClick(View v) 
+		public void onClick(View v)
 		{
 			List<NameValuePair> nameValuePair = new ArrayList<NameValuePair>(5);
 	   		nameValuePair.add(new BasicNameValuePair("Type", "Mode"));
 	   		nameValuePair.add(new BasicNameValuePair(
-	   		   "Frequency", 
+	   		   "Frequency",
 	   		   Integer.toString(mFrequencyBar.getProgress())));
 	   		nameValuePair.add(new BasicNameValuePair(
 	   			"Mode",
@@ -64,24 +64,27 @@ public class Fragment2 extends Fragment {
 			HttpPostWrapper httpPostWrapper = new HttpPostWrapper(MainActivity.GetUrl(), nameValuePair);
 
 		}
-		
+
 	};
-	
+
 	View.OnClickListener LightsOff = new View.OnClickListener(){
 
 		@Override
-		public void onClick(View v) 
+		public void onClick(View v)
 		{
-			List<NameValuePair> nameValuePair = new ArrayList<NameValuePair>(5);
-	   		nameValuePair.add(new BasicNameValuePair("Type", "fColor"));
-	   		nameValuePair.add(new BasicNameValuePair("Alpha", "0"));
-	   		nameValuePair.add(new BasicNameValuePair("Red", "0"));
-	   		nameValuePair.add(new BasicNameValuePair("Green", "0"));
-	   		nameValuePair.add(new BasicNameValuePair("Blue", "0"));
-	   		@SuppressWarnings("unused")
-			HttpPostWrapper httpPostWrapper = new HttpPostWrapper(MainActivity.GetUrl(), nameValuePair);
+      for ( int i = 0; i < 3; i++)
+      {
+        List<NameValuePair> nameValuePair = new ArrayList<NameValuePair>(5);
+          nameValuePair.add(new BasicNameValuePair("Type", "fColor"));
+          nameValuePair.add(new BasicNameValuePair("Alpha", "0"));
+          nameValuePair.add(new BasicNameValuePair("Red", "0"));
+          nameValuePair.add(new BasicNameValuePair("Green", "0"));
+          nameValuePair.add(new BasicNameValuePair("Blue", "0"));
+          @SuppressWarnings("unused")
+        HttpPostWrapper httpPostWrapper = new HttpPostWrapper(MainActivity.GetUrl(), nameValuePair);
+      }
 
 		}
-		
+
 	};
 }

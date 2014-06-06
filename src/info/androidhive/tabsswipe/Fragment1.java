@@ -20,7 +20,6 @@ import android.widget.ToggleButton;
 import com.larswerkman.holocolorpicker.ColorPicker;
 import com.larswerkman.holocolorpicker.ColorPicker.OnColorChangedListener;
 import com.larswerkman.holocolorpicker.OpacityBar;
-import com.larswerkman.holocolorpicker.ValueBar;
 
 public class Fragment1 extends Fragment {
 int mColor;
@@ -39,27 +38,28 @@ ToggleButton AutoSendButton;
 		AutoSendButton = (ToggleButton) rootView.findViewById(R.id.toggleButton1);
 		SendButton.setOnClickListener(SendButtonListener);
 		picker.addOpacityBar(opacityBar);
+        picker.setTouchAnywhereOnColorWheelEnabled(true);
 		mColor = picker.getColor();
-		
-		picker.setOldCenterColor(picker.getColor());		
+
+		picker.setOldCenterColor(picker.getColor());
 		picker.setOnColorChangedListener(ColorChangedListener);
 
 		//to turn of showing the old color
 		picker.setShowOldCenterColor(false);
-		
+
 		return rootView;
 	}
-	
+
 	OnColorChangedListener ColorChangedListener = new OnColorChangedListener()
 	{
 		@Override
 		@SuppressLint("ShowToast")
-		public void onColorChanged(int color) 
+		public void onColorChanged(int color)
 		{
 			mColor = color;
 			if ( AutoSendButton.isChecked())
 			{
-				if (System.currentTimeMillis() - mTime > 75)
+				if (System.currentTimeMillis() - mTime > 100)
 				{
 				  postColor(MainActivity.GetUrl(), mColor,"j");
 				  mTime = System.currentTimeMillis();
@@ -67,9 +67,9 @@ ToggleButton AutoSendButton;
 			}
 		}
 	};
-	
-	
-	View.OnClickListener SendButtonListener = new View.OnClickListener() 
+
+
+	View.OnClickListener SendButtonListener = new View.OnClickListener()
 	{
 		@Override
 		@SuppressLint("ShowToast")
@@ -79,12 +79,12 @@ ToggleButton AutoSendButton;
 	    postColor(MainActivity.GetUrl(), mColor,"f");
 		}
 	};
-	
+
 	public long GetTimeLastSent()
 	{
 		return mTime;
 	}
-	
+
 	public void postColor(final String Url, final int InputColor,final String Method)
 	{
 		// Building post parameters

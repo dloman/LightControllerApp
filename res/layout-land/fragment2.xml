@@ -14,14 +14,6 @@
         android:textColor="#FFFF00" 
         android:text="@string/SloshFreq" />
 
-      <Button
-          android:id="@+id/OffButton"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_centerVertical="true"
-          android:layout_toLeftOf="@+id/checkedTextView1"
-          android:text="@string/LightsOff" />
-
       <SeekBar
           android:id="@+id/seekBar1"
           android:layout_width="match_parent"
@@ -40,12 +32,31 @@
           android:layout_marginBottom="50dp" />
 
       <Button
+          android:id="@+id/OffButton"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_marginRight="43dp"
+          android:layout_toLeftOf="@+id/SloshButton"
+          android:text="@string/LightsOff" />
+
+      <Button
           android:id="@+id/SloshButton"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_alignLeft="@+id/checkedTextView1"
+          android:layout_alignRight="@+id/checkedTextView1"
           android:layout_centerVertical="true"
-          android:layout_marginLeft="82dp"
           android:text="@string/ModeStart" />
+
+      <ToggleButton
+          android:id="@+id/LaserToggle"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_marginLeft="52dp"
+          android:layout_toRightOf="@+id/SloshButton"
+          android:text="@string/LaserText"
+          android:textOff="@string/LasersOn"
+          android:textOn="@string/LasersOff" />
 
 </RelativeLayout>

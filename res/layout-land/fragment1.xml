@@ -23,7 +23,7 @@
         android:layout_marginTop="32dp" />
 
     <ToggleButton
-        android:id="@+id/toggleButton1"
+        android:id="@+id/AutoSendToggle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/SendColor"

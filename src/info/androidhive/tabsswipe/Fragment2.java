@@ -17,12 +17,14 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 public class Fragment2 extends Fragment {
 
 	SeekBar mFrequencyBar;
 	Switch mVerticalSwitch, mHorizontalSwitch;
 	Spinner mSpinner;
+	ToggleButton LaserToggle;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,6 +35,8 @@ public class Fragment2 extends Fragment {
 	    StartSloshButton.setOnClickListener(StartSlosh);
 	    Button OffButton = (Button) rootView.findViewById(R.id.OffButton);
 	    OffButton.setOnClickListener(LightsOff);
+	    LaserToggle = (ToggleButton) rootView.findViewById(R.id.LaserToggle);
+	    LaserToggle.setOnClickListener(LaserToggleListener);
 		mFrequencyBar = (SeekBar) rootView.findViewById(R.id.seekBar1);
 
 		mSpinner = (Spinner) rootView.findViewById(R.id.spinner1);
@@ -81,10 +85,22 @@ public class Fragment2 extends Fragment {
           nameValuePair.add(new BasicNameValuePair("Green", "0"));
           nameValuePair.add(new BasicNameValuePair("Blue", "0"));
           @SuppressWarnings("unused")
-        HttpPostWrapper httpPostWrapper = new HttpPostWrapper(MainActivity.GetUrl(), nameValuePair);
+          HttpPostWrapper httpPostWrapper = new HttpPostWrapper(MainActivity.GetUrl(), nameValuePair);
       }
 
 		}
 
 	};
+  View.OnClickListener LaserToggleListener = new View.OnClickListener() {
+	  
+	@Override
+	public void onClick(View v) {
+		List<NameValuePair> nameValuePair = new ArrayList<NameValuePair>(2);
+        nameValuePair.add(new BasicNameValuePair("Type", "LaserToggle"));
+        nameValuePair.add(new BasicNameValuePair("Value", Boolean.toString(LaserToggle.isChecked())) );
+        @SuppressWarnings("unused")
+        HttpPostWrapper httpPostWrapper = new HttpPostWrapper(MainActivity.GetUrl(), nameValuePair);
+        
+	}
+};
 }

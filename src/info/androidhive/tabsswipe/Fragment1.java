@@ -35,7 +35,7 @@ ToggleButton AutoSendButton;
 		ColorPicker picker = (ColorPicker) rootView.findViewById(R.id.picker);
 		OpacityBar opacityBar = (OpacityBar) rootView.findViewById(R.id.opacitybar);
 		Button SendButton = (Button) rootView.findViewById(R.id.SendColor);
-		AutoSendButton = (ToggleButton) rootView.findViewById(R.id.toggleButton1);
+		AutoSendButton = (ToggleButton) rootView.findViewById(R.id.AutoSendToggle);
 		SendButton.setOnClickListener(SendButtonListener);
 		picker.addOpacityBar(opacityBar);
         picker.setTouchAnywhereOnColorWheelEnabled(true);
